@@ -1,0 +1,32 @@
+:root {
+  --clr-blue: hsl(240, 38%, 20%);
+  --clr-grayish-blue: hsl(240, 18%, 77%);
+
+  --ff-primary: "Inter", sans-serif;
+
+  --fs-text: 1.125rem;
+  --fs-name: 0.9375rem;
+
+  --lh-text: 1.3em;
+  --lh-name: 1.4em;
+
+  --fw-300: 300;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  --main-width: 20.4375rem;
+  --avatar-width: 15.8125rem;
+
+  --space-xxs: 0.3125rem;
+  --space-md: 1.5rem;
+
+  @media (min-width: 90em) {
+    --fs-text: 2rem;
+    --fs-name: 1.25rem;
+
+    --lh-name: 1.9em;
+
+    --main-width: 75rem;
+    --avatar-width: 33.75rem;
+  }
+}

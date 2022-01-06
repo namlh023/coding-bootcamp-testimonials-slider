@@ -1,0 +1,135 @@
+@use "./font";
+@use "./reset";
+@use "./root";
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  text-align: center;
+
+  display: flex;
+
+  background-image: url("../images/pattern-curve.svg");
+  background-repeat: no-repeat;
+  background-size: min(100%, 38rem);
+  background-position: bottom left;
+}
+
+.container {
+  padding: var(--space-md);
+}
+
+.slider {
+  margin: auto;
+  max-width: var(--main-width);
+  overflow: hidden;
+}
+
+.slides {
+  //   max-width: var(--main-width);
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .slide {
+    max-width: var(--main-width);
+    flex-shrink: 0;
+  }
+
+  .avatar {
+    position: relative;
+
+    padding: 2.3rem;
+    background-image: url("../images/pattern-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+
+    img {
+      margin: auto;
+      width: var(--avatar-width);
+      height: var(--avatar-width);
+
+      background: var(--clr-grayish-blue);
+      box-shadow: 0px 40px 50px -30px rgba(36, 36, 113, 0.495001);
+      border-radius: var(--space-xxs);
+    }
+  }
+
+  .btn-slide {
+    position: absolute;
+    bottom: 1rem;
+    left: 8.5rem;
+    display: flex;
+    gap: 2rem;
+    padding: 0.7rem 1rem;
+
+    background: #ffffff;
+    box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
+    border-radius: 1.75rem;
+
+    img {
+      background-color: #ffffff;
+      width: 0.5rem;
+      height: 1rem;
+    }
+  }
+
+  .quote {
+    font-size: var(--fs-text);
+    line-height: var(--lh-text);
+    color: var(--clr-blue);
+    font-weight: var(--fw-300);
+
+    padding: 2rem 0 1rem 0;
+
+    background-image: url("../images/pattern-quotes.svg");
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    background-position: top;
+  }
+
+  .info {
+    font-size: var(--fs-name);
+    line-height: var(--lh-name);
+    color: var(--clr-grayish-blue);
+    font-weight: var(--fw-500);
+
+    .name {
+      color: var(--clr-blue);
+      font-weight: var(--fw-700);
+    }
+  }
+}
+
+@media (min-width: 90em) {
+  .btn-slide {
+    position: absolute;
+    bottom: 1rem;
+    left: 10rem;
+  }
+
+  .slide {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+
+    text-align: left;
+    & > div {
+      flex: 1 1;
+    }
+
+    .info {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
